@@ -4,11 +4,11 @@ import { AuthService } from '../shared/services/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+  selector: 'app-sign-up',
+  templateUrl: './sign-up.component.html',
+  styleUrls: ['./sign-up.component.scss'],
 })
-export class LoginComponent implements OnInit {
+export class SignUpComponent implements OnInit {
   email = new FormControl('', [Validators.required, Validators.email]);
   password = new FormControl('', [Validators.required]);
 
@@ -30,21 +30,9 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  onGoogleSignIn() {
-    this.authService.signInWithGoogle().then((res) => {
-      this.router.navigate(['/']);
-    });
-  }
-
-  onGithubSignIn() {
-    this.authService.signInWithGithub().then((res) => {
-      this.router.navigate(['/']);
-    });
-  }
-
-  onEmailSignIn() {
+  onEmailSignUp() {
     this.authService
-      .signInWithEmail(this.email.value, this.password.value)
+      .signUpWithEmail(this.email.value, this.password.value)
       .then((res) => {
         this.router.navigate(['/']);
       })

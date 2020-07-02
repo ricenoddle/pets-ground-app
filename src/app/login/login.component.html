@@ -21,18 +21,18 @@
       }}</mat-error>
     </mat-form-field>
     <div class="button-group">
-      <button mat-stroked-button class="sign-in-btn">
+      <button mat-stroked-button class="sign-in-btn" (click)="onEmailSignIn()">
         Sign In
       </button>
-      <button mat-stroked-button class="sign-up-btn">
+      <button mat-stroked-button class="sign-up-btn" routerLink="/sign-up">
         Sign Up
       </button>
     </div>
     <div class="login-ways">
-      <button mat-flat-button color="primary">
+      <button mat-flat-button color="primary" (click)="onGoogleSignIn()">
         <i class="fab fa-google"></i>Sign In With Google
       </button>
-      <button mat-flat-button color="primary">
+      <button mat-flat-button color="primary" (click)="onGithubSignIn()">
         <i class="fab fa-github"></i>Sign In With GitHub
       </button>
       <button mat-flat-button color="primary">
