@@ -1,3 +1,26 @@
 .home {
   margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+
+  .rolling-pictures {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid lightgray;
+    background-color: rgba($color: #d4d3d3, $alpha: 0.25);
+
+    .carousel {
+      width: 50%;
+    }
+
+    .introduction {
+      width: 50%;
+      padding: 1rem;
+
+      p {
+        font-size: 1.5rem;
+      }
+    }
+  }
 }

@@ -1,15 +1,75 @@
-<div class="home">
+<div class="home container">
   <div class="jumbotron">
     <h1 class="display-4">Welcome To The Pets Ground</h1>
-    <p class="lead">
-      This is a simple hero unit, a simple jumbotron-style component for calling
-      extra attention to featured content or information.
-    </p>
     <hr class="my-4" />
-    <p>
-      It uses utility classes for typography and spacing to space content out
-      within the larger container.
+    <p class="lead">
+      This is a community that you can share your cute pets with others. Also
+      you can look at others pets, you can like them, you can look into the
+      details. Hope you can have fun with these cute pets.
     </p>
-    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  </div>
+  <div class="rolling-pictures">
+    <div id="petsCarousel" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#petsCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#petsCarousel" data-slide-to="1"></li>
+        <li data-target="#petsCarousel" data-slide-to="2"></li>
+        <li data-target="#petsCarousel" data-slide-to="3"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-interval="5000">
+          <img
+            src="../../../assets/photo-1507146426996-ef05306b995a.jpeg"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item" data-interval="5000">
+          <img
+            src="../../../assets/photo-1536500152107-01ab1422f932.jpeg"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item" data-interval="5000">
+          <img
+            src="../../../assets/photo-1553499057-2e1b15f16f8c.jpeg"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item" data-interval="5000">
+          <img
+            src="../../../assets/photo-1555685812-4b943f1cb0eb.jpeg"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+      </div>
+      <a
+        class="carousel-control-prev"
+        href="#petsCarousel"
+        role="button"
+        data-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a
+        class="carousel-control-next"
+        href="#petsCarousel"
+        role="button"
+        data-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    <div class="introduction">
+      <p>
+        Welcome, in here, you can share your own pets to others. Hope you are
+        having fun with this community.
+      </p>
+    </div>
   </div>
 </div>
