@@ -1,0 +1,46 @@
+<div class="login">
+  <div class="login-container">
+    <div class="login-title">
+      <p>Login</p>
+    </div>
+    <mat-form-field appearance="fill">
+      <mat-label>Enter your email</mat-label>
+      <input
+        matInput
+        placeholder="pat@example.com"
+        [formControl]="email"
+        required
+      />
+      <mat-error *ngIf="email.invalid">{{ getEmailErrorMessage() }}</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Enter your password</mat-label>
+      <input matInput type="password" [formControl]="password" required />
+      <mat-error *ngIf="email.invalid">{{
+        getPasswordErrorMessage()
+      }}</mat-error>
+    </mat-form-field>
+    <div class="button-group">
+      <button mat-stroked-button class="sign-in-btn">
+        Sign In
+      </button>
+      <button mat-stroked-button class="sign-up-btn">
+        Sign Up
+      </button>
+    </div>
+    <div class="login-ways">
+      <button mat-flat-button color="primary">
+        <i class="fab fa-google"></i>Sign In With Google
+      </button>
+      <button mat-flat-button color="primary">
+        <i class="fab fa-github"></i>Sign In With GitHub
+      </button>
+      <button mat-flat-button color="primary">
+        <i class="fab fa-facebook"></i>Sign In With FaceBook
+      </button>
+      <button mat-flat-button color="primary">
+        <i class="fab fa-twitter"></i>Sign In With Twitter
+      </button>
+    </div>
+  </div>
+</div>
