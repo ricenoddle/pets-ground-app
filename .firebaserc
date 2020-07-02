@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "pets-ground": {
+      "hosting": {
+        "pets-ground-app": [
+          "pets-ground"
+        ]
+      }
+    }
+  }
+}

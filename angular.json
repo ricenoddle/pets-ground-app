@@ -121,8 +121,16 @@
               "devServerTarget": "pets-ground-app:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
-  "defaultProject": "pets-ground-app"
+    }
+  },
+  "defaultProject": "pets-ground-app",
+  "cli": {
+    "analytics": false
+  }
 }

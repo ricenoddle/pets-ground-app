@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "pets-ground-app",
+      "public": "dist/pets-ground-app",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}
