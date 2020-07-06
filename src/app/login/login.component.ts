@@ -42,6 +42,12 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  onFacebookSignIn() {
+    this.authService.signInWithFacebook().then((res) => {
+      this.router.navigate(['/']);
+    });
+  }
+
   onEmailSignIn() {
     this.authService
       .signInWithEmail(this.email.value, this.password.value)

@@ -36,6 +36,12 @@ export class AuthService {
     );
   }
 
+  signInWithFacebook() {
+    return this._firebaseAuth.signInWithPopup(
+      new firebase.auth.FacebookAuthProvider()
+    );
+  }
+
   signInWithEmail(email: string, password: string) {
     return this._firebaseAuth.signInWithEmailAndPassword(email, password);
   }
