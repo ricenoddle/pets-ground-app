@@ -1,3 +1,8 @@
 .pets-list {
   margin-top: 0.5rem;
+
+  .pets-cards {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }

@@ -9,5 +9,15 @@
       <button class="btn btn-primary">Create</button>
     </div>
   </div>
-  <app-pet-card></app-pet-card>
+  <div class="pets-cards">
+    <div class="pet-card" *ngFor="let pet of pets">
+      <app-pet-card
+        [pet_name]="pet.pet_name"
+        [pet_ownerEmail]="pet.pet_ownerEmail"
+        [pet_ownerImage]="pet.pet_ownerImage"
+        [pet_image]="pet.pet_image"
+        [description]="pet.description"
+      ></app-pet-card>
+    </div>
+  </div>
 </div>

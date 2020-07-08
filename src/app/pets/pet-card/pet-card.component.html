@@ -1,1 +1,21 @@
-<p>pet-card works!</p>
+<mat-card class="card">
+  <mat-card-header>
+    <div
+      mat-card-avatar
+      class="card-header-image"
+      [ngStyle]="{ 'background-image': getOwnerImage() }"
+    ></div>
+    <mat-card-title>{{ pet_name }}</mat-card-title>
+    <mat-card-subtitle>{{ pet_ownerEmail }}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="pet_image" alt="Photo of a Shiba Inu" />
+  <mat-card-content>
+    <p>{{ description }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" class="mr-3">More</button>
+    <button mat-mini-fab color="accent">
+      <mat-icon>favorite</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>

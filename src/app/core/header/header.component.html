@@ -32,13 +32,12 @@
       >
         Login
       </button>
-      <button
-        *ngIf="isLoggedIn()"
-        class="btn btn-outline-warning mr-3"
-        (click)="onLogout()"
-      >
-        Logout
-      </button>
+      <div class="user-info" *ngIf="isLoggedIn()">
+        <p>Welcome: {{ getUserEmail() }}</p>
+        <button class="btn btn-outline-warning mr-3" (click)="onLogout()">
+          Logout
+        </button>
+      </div>
     </div>
   </nav>
 </div>
