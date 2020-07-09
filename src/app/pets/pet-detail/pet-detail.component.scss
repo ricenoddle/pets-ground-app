@@ -1,0 +1,63 @@
+.pet-detail {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+
+  .card-container {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    .card {
+      width: 18rem;
+      height: 32rem;
+      overflow: scroll;
+
+      .card-header {
+        font-size: 1.5rem;
+      }
+    }
+    .pet-comments {
+      width: 49%;
+      height: 38rem;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid lightgray;
+      overflow: scroll;
+
+      .pet-comment-header {
+        position: sticky;
+        top: 0;
+        height: 10%;
+        background-color: rgb(240, 238, 238);
+        font-size: 1.5rem;
+        text-align: center;
+        padding: 0.75rem;
+      }
+
+      .pet-comment-content {
+        border-bottom: 1px solid lightgray;
+        height: 82%;
+        margin-top: 0.75rem;
+        overflow: scroll;
+
+        .comment {
+          display: flex;
+          flex-direction: column;
+          border-top: 1px solid lightgray;
+
+          .comment-giver {
+            justify-self: flex-end;
+          }
+        }
+      }
+
+      .comment-actions {
+        height: 8%;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+  }
+}

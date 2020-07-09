@@ -1,0 +1,46 @@
+<div class="pet-detail">
+  <div class="card-container">
+    <div class="card">
+      <div class="card-header text-center">
+        {{ petInfo?.pet_name }}
+      </div>
+      <img
+        [src]="petInfo?.pet_image"
+        class="card-img-top"
+        [alt]="petInfo?.pet_name"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Owner: {{ petInfo?.pet_ownerEmail }}</h5>
+        <p class="card-text">
+          {{ petInfo?.description }}
+        </p>
+        <button class="btn btn-outline-primary mb-3" *ngIf="showEditButton()">
+          Edit
+        </button>
+      </div>
+    </div>
+    <div class="pet-comments">
+      <div class="pet-comment-header">
+        Comments
+      </div>
+      <div class="pet-comment-content">
+        <div *ngFor="let comment of petComments" class="comment">
+          <p>
+            {{ comment.comment }}
+          </p>
+          <p class="comment-giver">------ {{ comment.commentGiver }}</p>
+        </div>
+      </div>
+      <div class="comment-actions">
+        <button class="btn btn-light" (click)="onAddComment()">
+          Add Comment
+        </button>
+      </div>
+      <app-add-comment
+        *ngIf="addComment"
+        [petId]="id"
+        (cancelSubmit)="handleCancel($event)"
+      ></app-add-comment>
+    </div>
+  </div>
+</div>

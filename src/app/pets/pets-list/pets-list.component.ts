@@ -15,7 +15,9 @@ export class PetsListComponent implements OnInit {
   ngOnInit(): void {
     this.petsService.getPets().subscribe((pets) => {
       this.pets = pets.map((pet) => {
-        return pet.payload.doc.data() as IPet;
+        let id = pet.payload.doc.id;
+        let info = pet.payload.doc.data() as IPet;
+        return { ...info, id };
       });
     });
   }

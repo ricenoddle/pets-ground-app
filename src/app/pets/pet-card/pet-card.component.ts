@@ -11,6 +11,7 @@ export class PetCardComponent implements OnInit {
   @Input() pet_ownerImage: string;
   @Input() pet_image: string;
   @Input() description: string;
+  @Input() pet_id: string;
 
   constructor() {}
 

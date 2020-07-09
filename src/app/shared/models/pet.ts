@@ -4,4 +4,5 @@ export interface IPet {
   pet_ownerImage: string;
   pet_image: string;
   description: string;
+  id: string;
 }
