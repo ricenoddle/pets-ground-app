@@ -31,28 +31,43 @@ export class LoginComponent implements OnInit {
   }
 
   onGoogleSignIn() {
-    this.authService.signInWithGoogle().then((res) => {
-      this.router.navigate(['/']);
-    });
+    this.authService
+      .signInWithGoogle()
+      .then((res) => {
+        window.history.back();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   onGithubSignIn() {
-    this.authService.signInWithGithub().then((res) => {
-      this.router.navigate(['/']);
-    });
+    this.authService
+      .signInWithGithub()
+      .then((res) => {
+        window.history.back();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   onFacebookSignIn() {
-    this.authService.signInWithFacebook().then((res) => {
-      this.router.navigate(['/']);
-    });
+    this.authService
+      .signInWithFacebook()
+      .then((res) => {
+        window.history.back();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   onEmailSignIn() {
     this.authService
       .signInWithEmail(this.email.value, this.password.value)
       .then((res) => {
-        this.router.navigate(['/']);
+        window.history.back();
       })
       .catch((err) => {
         console.log(err);
