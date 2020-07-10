@@ -4,6 +4,8 @@ import { PetsService } from 'src/app/shared/services/pets.service';
 import { IPet } from 'src/app/shared/models/pet';
 import { IPetComment } from 'src/app/shared/models/PetComment';
 import { AuthService } from 'src/app/shared/services/auth.service';
+import { MatDialog } from '@angular/material/dialog';
+import { AlertLoginDialogComponent } from 'src/app/shared/popups/alert-login-dialog/alert-login-dialog.component';
 
 @Component({
   selector: 'app-pet-detail',
@@ -19,12 +21,12 @@ export class PetDetailComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private petsService: PetsService,
-    private authService: AuthService
-  ) {
-    this.id = activatedRoute.snapshot.paramMap.get('id');
-  }
+    private authService: AuthService,
+    private dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
+    this.id = this.activatedRoute.snapshot.paramMap.get('id');
     this.petsService.getPetByDocId(this.id).subscribe((pet) => {
       this.petInfo = pet as IPet;
     });
@@ -45,7 +47,11 @@ export class PetDetailComponent implements OnInit {
   }
 
   onAddComment() {
-    this.addComment = true;
+    if (this.authService.getCurrentUserInfo() !== null) {
+      this.addComment = true;
+    } else {
+      this.dialog.open(AlertLoginDialogComponent);
+    }
   }
 
   handleCancel(cancel: boolean) {
