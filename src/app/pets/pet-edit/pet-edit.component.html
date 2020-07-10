@@ -1,0 +1,77 @@
+<div class="pet-edit">
+  <div class="create-form" [formGroup]="petForm">
+    <div class="form-header">
+      <p>
+        Edit Your Pet !
+      </p>
+    </div>
+    <div class="create-form-row">
+      <mat-form-field appearance="outline" class="form-item">
+        <mat-label>Your Pet Name</mat-label>
+        <input
+          matInput
+          placeholder="Example: Shinu"
+          formControlName="pet_name"
+        />
+        <mat-error *ngIf="formControlNames.pet_name.invalid">{{
+          getPetNameErrorMessage()
+        }}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="form-item">
+        <mat-label>Pet Owner Name</mat-label>
+        <input
+          matInput
+          placeholder="Email Address"
+          formControlName="pet_ownerEmail"
+        />
+        <mat-error *ngIf="formControlNames.pet_ownerEmail.invalid">{{
+          getPetOwnerEmailErrorMessage()
+        }}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="create-form-row">
+      <mat-form-field appearance="outline" class="form-single">
+        <mat-label>Your Pet Image URL</mat-label>
+        <input
+          matInput
+          placeholder="http/https://"
+          formControlName="pet_image"
+        />
+        <mat-error *ngIf="formControlNames.pet_image.invalid">{{
+          getPetImageErrorMessage()
+        }}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="create-form-row">
+      <mat-form-field appearance="outline" class="form-single">
+        <mat-label>Pet Owner Image</mat-label>
+        <input
+          matInput
+          placeholder="http/https://"
+          formControlName="pet_ownerImage"
+        />
+        <mat-error *ngIf="formControlNames.pet_ownerImage.invalid">{{
+          getPetOwnerImageErrorMessage()
+        }}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="create-form-row">
+      <mat-form-field appearance="outline" class="form-single">
+        <mat-label>Description</mat-label>
+        <textarea
+          matInput
+          placeholder="Enter your description for your pet..."
+          formControlName="description"
+        ></textarea>
+        <mat-error *ngIf="formControlNames.description.invalid">{{
+          getDescriptionErrorMessage()
+        }}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="create-form-row">
+      <button class="btn btn-light form-single" (click)="onSubmit()">
+        Submit
+      </button>
+    </div>
+  </div>
+</div>

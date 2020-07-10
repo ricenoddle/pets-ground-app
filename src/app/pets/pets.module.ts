@@ -9,6 +9,8 @@ import { PetCardComponent } from './pet-card/pet-card.component';
 import { SharedModule } from '../shared/shared.module';
 import { PetDetailComponent } from './pet-detail/pet-detail.component';
 import { AddCommentComponent } from './add-comment/add-comment.component';
+import { PetCreateComponent } from './pet-create/pet-create.component';
+import { PetEditComponent } from './pet-edit/pet-edit.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { AddCommentComponent } from './add-comment/add-comment.component';
     PetCardComponent,
     PetDetailComponent,
     AddCommentComponent,
+    PetCreateComponent,
+    PetEditComponent,
   ],
   imports: [
     CommonModule,

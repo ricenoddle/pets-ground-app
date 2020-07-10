@@ -14,7 +14,11 @@
         <p class="card-text">
           {{ petInfo?.description }}
         </p>
-        <button class="btn btn-outline-primary mb-3" *ngIf="showEditButton()">
+        <button
+          class="btn btn-outline-primary mb-3"
+          *ngIf="showEditButton()"
+          [routerLink]="['/pets/edit', id]"
+        >
           Edit
         </button>
       </div>
@@ -28,7 +32,7 @@
           <p>
             {{ comment.comment }}
           </p>
-          <p class="comment-giver">------ {{ comment.commentGiver }}</p>
+          <p class="ml-3">------ {{ comment.commentGiver }}</p>
         </div>
       </div>
       <div class="comment-actions">

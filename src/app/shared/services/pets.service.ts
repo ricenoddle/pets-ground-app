@@ -22,6 +22,14 @@ export class PetsService {
     return this.afs.collection(petsCollection.petsInfo).doc(id).valueChanges();
   }
 
+  createPet(pet: any) {
+    return this.afs.collection(petsCollection.petsInfo).add(pet);
+  }
+
+  updatePetInfo(id: string, pet: any) {
+    return this.afs.collection(petsCollection.petsInfo).doc(id).update(pet);
+  }
+
   getPetCommentsById(id: string) {
     return this.afs
       .collection(petsCollection.petsComment)

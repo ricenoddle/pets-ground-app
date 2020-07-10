@@ -1,0 +1,35 @@
+.pet-edit {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+
+  .create-form {
+    // border: 2px solid black;
+    width: 50%;
+
+    .form-header {
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    .create-form-row {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      .btn-light {
+        background-color: rgb(235, 230, 230);
+      }
+
+      .form-item {
+        width: 49%;
+      }
+
+      .form-single {
+        width: 100%;
+      }
+    }
+  }
+}
