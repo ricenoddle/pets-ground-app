@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'firebase/app';
 import { UserService } from '../user-shared/user.service';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-user-detail',
@@ -9,18 +10,28 @@ import { UserService } from '../user-shared/user.service';
 })
 export class UserDetailComponent implements OnInit {
   userInfo: User;
-  //DisplayName
-  //photo
-  //PhoneNumber
+
+  userName: FormControl = new FormControl('', [Validators.required]);
+  phoneNumber: FormControl = new FormControl('');
 
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
     this.userInfo = this.userService.getCurrentUser();
-    console.log(this.userInfo);
+    this.userName.setValue(this.userInfo?.displayName);
+    this.phoneNumber.setValue(this.userInfo?.phoneNumber);
   }
 
-  updateInfo() {
-    // this.userService.updateUserInfo().then((res) => console.log(res));
+  onSave() {
+    const updatedInfo = {
+      displayName: this.userName.value,
+      phoneNumber: this.phoneNumber.value,
+    };
+    this.userService
+      .updateUserInfo(updatedInfo)
+      .then((res) => {
+        window.history.back();
+      })
+      .catch((err) => console.log(err));
   }
 }

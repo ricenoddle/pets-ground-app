@@ -21,7 +21,7 @@ export class AddCommentComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.userId = this.authService.getCurrentUserInfo()?.email;
+    this.userId = this.authService.getCurrentUserInfo()?.displayName;
   }
 
   onSubmit() {
@@ -33,7 +33,6 @@ export class AddCommentComponent implements OnInit {
     this.petsService.addPetComment(comment).then((res) => {
       this.comment = null;
       this.cancelSubmit.emit(true);
-      console.log('add Successfully');
     });
   }
 

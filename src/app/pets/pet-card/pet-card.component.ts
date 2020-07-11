@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class PetCardComponent implements OnInit {
   @Input() pet_name: string;
   @Input() pet_ownerEmail: string;
+  @Input() pet_ownerName: string;
   @Input() pet_ownerImage: string;
   @Input() pet_image: string;
   @Input() description: string;

@@ -6,38 +6,51 @@
   <button (click)="updateInfo()">update</button> -->
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title">User Name: {{ userInfo?.displayName }}</h5>
+      <div class="form-group row mt-3">
+        <label for="userName" class="col-sm-5 col-form-label card-title">
+          User Name
+        </label>
+        <div class="col-sm-7">
+          <input
+            type="text"
+            class="form-control"
+            id="userName"
+            [formControl]="userName"
+          />
+        </div>
+      </div>
       <div class="user-photo">
         <p>User Image:</p>
         <img [src]="userInfo?.photoURL" alt="..." />
       </div>
-      <div class="form-group row">
-        <label for="emailAddress" class="col-sm-5 col-form-label"
-          >Email Address</label
-        >
+      <div class="form-group row mt-3">
+        <label for="emailAddress" class="col-sm-5 col-form-label">
+          Email Address
+        </label>
         <div class="col-sm-7">
           <input
             type="text"
             class="form-control"
             id="emailAddress"
             [value]="userInfo?.email"
+            disabled
           />
         </div>
       </div>
       <div class="form-group row">
-        <label for="phoneNumer" class="col-sm-5 col-form-label"
-          >Phone Number</label
-        >
+        <label for="phoneNumer" class="col-sm-5 col-form-label">
+          Phone Number
+        </label>
         <div class="col-sm-7">
           <input
             type="text"
             class="form-control"
             id="phoneNumer"
-            [value]="userInfo?.phoneNumber"
+            [formControl]="phoneNumber"
           />
         </div>
       </div>
-      <button class="btn btn-primary">
+      <button class="btn btn-primary" (click)="onSave()">
         Save
       </button>
     </div>

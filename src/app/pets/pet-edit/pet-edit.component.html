@@ -6,7 +6,7 @@
       </p>
     </div>
     <div class="create-form-row">
-      <mat-form-field appearance="outline" class="form-item">
+      <mat-form-field appearance="outline" class="form-single">
         <mat-label>Your Pet Name</mat-label>
         <input
           matInput
@@ -15,17 +15,6 @@
         />
         <mat-error *ngIf="formControlNames.pet_name.invalid">{{
           getPetNameErrorMessage()
-        }}</mat-error>
-      </mat-form-field>
-      <mat-form-field appearance="outline" class="form-item">
-        <mat-label>Pet Owner Name</mat-label>
-        <input
-          matInput
-          placeholder="Email Address"
-          formControlName="pet_ownerEmail"
-        />
-        <mat-error *ngIf="formControlNames.pet_ownerEmail.invalid">{{
-          getPetOwnerEmailErrorMessage()
         }}</mat-error>
       </mat-form-field>
     </div>
@@ -39,19 +28,6 @@
         />
         <mat-error *ngIf="formControlNames.pet_image.invalid">{{
           getPetImageErrorMessage()
-        }}</mat-error>
-      </mat-form-field>
-    </div>
-    <div class="create-form-row">
-      <mat-form-field appearance="outline" class="form-single">
-        <mat-label>Pet Owner Image</mat-label>
-        <input
-          matInput
-          placeholder="http/https://"
-          formControlName="pet_ownerImage"
-        />
-        <mat-error *ngIf="formControlNames.pet_ownerImage.invalid">{{
-          getPetOwnerImageErrorMessage()
         }}</mat-error>
       </mat-form-field>
     </div>

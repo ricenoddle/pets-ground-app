@@ -17,8 +17,9 @@ export class PetCreateComponent implements OnInit {
 
   petForm: FormGroup = this.fb.group({
     pet_name: ['', Validators.required],
-    pet_ownerEmail: ['', [Validators.required, Validators.email]],
-    pet_ownerImage: ['', Validators.required],
+    pet_ownerName: [''],
+    pet_ownerImage: [''],
+    pet_ownerEmail: [''],
     pet_image: ['', Validators.required],
     description: ['', Validators.required],
   });
@@ -27,31 +28,18 @@ export class PetCreateComponent implements OnInit {
 
   ngOnInit(): void {
     this.petForm
-      .get('pet_ownerEmail')
-      .setValue(this.authService.getCurrentUserInfo().email);
+      .get('pet_ownerName')
+      .setValue(this.authService.getCurrentUserInfo().displayName);
     this.petForm
       .get('pet_ownerImage')
       .setValue(this.authService.getCurrentUserInfo().photoURL);
+    this.petForm
+      .get('pet_ownerEmail')
+      .setValue(this.authService.getCurrentUserInfo().email);
   }
 
   getPetNameErrorMessage() {
     if (this.formControlNames.pet_name.hasError('required')) {
-      return 'You must enter a value';
-    }
-  }
-
-  getPetOwnerEmailErrorMessage() {
-    if (this.formControlNames.pet_ownerEmail.hasError('required')) {
-      return 'You must enter a value';
-    }
-
-    return this.formControlNames.pet_ownerEmail.hasError('email')
-      ? 'Not a valid email'
-      : '';
-  }
-
-  getPetOwnerImageErrorMessage() {
-    if (this.formControlNames.pet_ownerImage.hasError('required')) {
       return 'You must enter a value';
     }
   }
