@@ -18,6 +18,8 @@ export class PetCreateComponent implements OnInit {
     description: ['', Validators.required],
   });
 
+  hasSaved: boolean = false;
+
   ngOnInit(): void {}
 
   getPetNameErrorMessage() {
@@ -67,8 +69,20 @@ export class PetCreateComponent implements OnInit {
   onSubmit() {
     if (this.petForm.valid) {
       this.petsService.createPet(this.petForm.value).then((res) => {
+        this.hasSaved = true;
         window.history.back();
       });
+    }
+  }
+
+  canDeactive(): boolean {
+    if (this.hasSaved) {
+      return true;
+    } else {
+      const confirmResult = window.confirm(
+        'Are you sure you wanna leave without saving ?'
+      );
+      return confirmResult ? true : false;
     }
   }
 }

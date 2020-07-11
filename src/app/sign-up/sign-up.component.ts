@@ -12,6 +12,8 @@ export class SignUpComponent implements OnInit {
   email = new FormControl('', [Validators.required, Validators.email]);
   password = new FormControl('', [Validators.required]);
 
+  hasSaved: boolean = false;
+
   constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {}
@@ -34,10 +36,22 @@ export class SignUpComponent implements OnInit {
     this.authService
       .signUpWithEmail(this.email.value, this.password.value)
       .then((res) => {
+        this.hasSaved = true;
         this.router.navigate(['/']);
       })
       .catch((err) => {
         console.log(err);
       });
+  }
+
+  canDeactive(): boolean {
+    if (this.hasSaved) {
+      return true;
+    } else {
+      const confirmResult = window.confirm(
+        'Are you sure you wanna leave without saving ?'
+      );
+      return confirmResult ? true : false;
+    }
   }
 }

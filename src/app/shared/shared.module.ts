@@ -11,6 +11,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { PetsService } from './services/pets.service';
 import { AlertLoginDialogComponent } from './popups/alert-login-dialog/alert-login-dialog.component';
 import { IsLoginGuard } from './route-guard/is-login.guard';
+import { CanDeactiveWithoutSaveGuard } from './route-guard/can-deactive-without-save.guard';
 
 @NgModule({
   declarations: [AlertLoginDialogComponent],
@@ -23,6 +24,6 @@ import { IsLoginGuard } from './route-guard/is-login.guard';
     MatIconModule,
     MatDialogModule,
   ],
-  providers: [PetsService, IsLoginGuard],
+  providers: [PetsService, IsLoginGuard, CanDeactiveWithoutSaveGuard],
 })
 export class SharedModule {}

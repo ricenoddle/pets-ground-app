@@ -38,6 +38,7 @@ export class AddCommentComponent implements OnInit {
   }
 
   onCancelSubmit() {
+    this.comment = null;
     this.cancelSubmit.emit(true);
   }
 }

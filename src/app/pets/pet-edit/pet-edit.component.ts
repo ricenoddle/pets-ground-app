@@ -16,6 +16,7 @@ export class PetEditComponent implements OnInit {
   ) {}
 
   id: string;
+  hasSaved: boolean = false;
 
   petForm: FormGroup = this.fb.group({
     pet_name: ['', Validators.required],
@@ -84,8 +85,20 @@ export class PetEditComponent implements OnInit {
       this.petsService
         .updatePetInfo(this.id, this.petForm.value)
         .then((res) => {
+          this.hasSaved = true;
           window.history.back();
         });
+    }
+  }
+
+  canDeactive(): boolean {
+    if (this.hasSaved) {
+      return true;
+    } else {
+      const confirmResult = window.confirm(
+        'Are you sure you wanna leave without saving ?'
+      );
+      return confirmResult ? true : false;
     }
   }
 }

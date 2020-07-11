@@ -6,6 +6,7 @@ import { PetDetailComponent } from './pet-detail/pet-detail.component';
 import { PetCreateComponent } from './pet-create/pet-create.component';
 import { PetEditComponent } from './pet-edit/pet-edit.component';
 import { IsLoginGuard } from '../shared/route-guard/is-login.guard';
+import { CanDeactiveWithoutSaveGuard } from '../shared/route-guard/can-deactive-without-save.guard';
 
 const routes: Routes = [
   { path: '', component: PetsComponent },
@@ -14,8 +15,13 @@ const routes: Routes = [
     path: 'create',
     component: PetCreateComponent,
     canActivate: [IsLoginGuard],
+    canDeactivate: [CanDeactiveWithoutSaveGuard],
   },
-  { path: 'edit/:id', component: PetEditComponent },
+  {
+    path: 'edit/:id',
+    component: PetEditComponent,
+    canDeactivate: [CanDeactiveWithoutSaveGuard],
+  },
 ];
 
 @NgModule({
