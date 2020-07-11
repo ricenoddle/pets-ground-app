@@ -13,7 +13,7 @@ export class AddCommentComponent implements OnInit {
   @Output() cancelSubmit: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   comment: string;
-  userId: string;
+  userName: string;
 
   constructor(
     private authService: AuthService,
@@ -21,14 +21,14 @@ export class AddCommentComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.userId = this.authService.getCurrentUserInfo()?.displayName;
+    this.userName = this.authService.getCurrentUserInfo()?.displayName;
   }
 
   onSubmit() {
     const comment: IPetComment = {
       comment: this.comment,
       petId: this.petId,
-      commentGiver: this.userId,
+      commentGiver: this.userName,
     };
     this.petsService.addPetComment(comment).then((res) => {
       this.comment = null;

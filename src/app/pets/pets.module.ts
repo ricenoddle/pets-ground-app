@@ -11,6 +11,7 @@ import { PetDetailComponent } from './pet-detail/pet-detail.component';
 import { AddCommentComponent } from './add-comment/add-comment.component';
 import { PetCreateComponent } from './pet-create/pet-create.component';
 import { PetEditComponent } from './pet-edit/pet-edit.component';
+import { PetCommentComponent } from './pet-comment/pet-comment.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { PetEditComponent } from './pet-edit/pet-edit.component';
     AddCommentComponent,
     PetCreateComponent,
     PetEditComponent,
+    PetCommentComponent,
   ],
   imports: [
     CommonModule,
