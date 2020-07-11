@@ -21,6 +21,7 @@ const routes: Routes = [
     component: SignUpComponent,
     canDeactivate: [CanDeactiveWithoutSaveGuard],
   },
+  { path: 'user', loadChildren: () => import('./user/user.module').then(m => m.UserModule) },
 ];
 
 @NgModule({

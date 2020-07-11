@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { PetsService } from 'src/app/shared/services/pets.service';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-pet-create',
@@ -8,7 +9,11 @@ import { PetsService } from 'src/app/shared/services/pets.service';
   styleUrls: ['./pet-create.component.scss'],
 })
 export class PetCreateComponent implements OnInit {
-  constructor(private fb: FormBuilder, private petsService: PetsService) {}
+  constructor(
+    private fb: FormBuilder,
+    private petsService: PetsService,
+    private authService: AuthService
+  ) {}
 
   petForm: FormGroup = this.fb.group({
     pet_name: ['', Validators.required],
@@ -20,7 +25,14 @@ export class PetCreateComponent implements OnInit {
 
   hasSaved: boolean = false;
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.petForm
+      .get('pet_ownerEmail')
+      .setValue(this.authService.getCurrentUserInfo().email);
+    this.petForm
+      .get('pet_ownerImage')
+      .setValue(this.authService.getCurrentUserInfo().photoURL);
+  }
 
   getPetNameErrorMessage() {
     if (this.formControlNames.pet_name.hasError('required')) {

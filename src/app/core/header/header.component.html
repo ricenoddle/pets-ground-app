@@ -33,7 +33,9 @@
         Login
       </button>
       <div class="user-info" *ngIf="isLoggedIn()">
-        <p>Welcome: {{ getUserEmail() }}</p>
+        <a routerLink="/user/detail">
+          <p>Welcome: {{ getUserEmail() }}</p>
+        </a>
         <button class="btn btn-outline-warning mr-3" (click)="onLogout()">
           Logout
         </button>
