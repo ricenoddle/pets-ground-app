@@ -33,12 +33,17 @@
         Login
       </button>
       <div class="user-info" *ngIf="isLoggedIn()">
-        <a routerLink="/user/detail">
-          <p>Welcome: {{ getUserEmail() }}</p>
-        </a>
-        <button class="btn btn-outline-warning mr-3" (click)="onLogout()">
-          Logout
+        <button
+          mat-stroked-button
+          color="primary"
+          [matMenuTriggerFor]="afterMenu"
+        >
+          {{ getUserName() }}
         </button>
+        <mat-menu #afterMenu="matMenu" xPosition="after">
+          <button mat-menu-item routerLink="/user/detail">User Profile</button>
+          <button mat-menu-item (click)="onLogout()">Logout</button>
+        </mat-menu>
       </div>
     </div>
   </nav>

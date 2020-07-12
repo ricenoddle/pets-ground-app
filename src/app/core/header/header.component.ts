@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
     return this.authService.isLoggedIn();
   }
 
-  getUserEmail() {
-    return this.authService.getCurrentUserInfo().email;
+  getUserName() {
+    return this.authService.getCurrentUserInfo().displayName;
   }
 }

@@ -72,6 +72,8 @@ export class PetCreateComponent implements OnInit {
         this.hasSaved = true;
         window.history.back();
       });
+    } else {
+      alert('Please make your form valid!');
     }
   }
 
