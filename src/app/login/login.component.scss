@@ -52,3 +52,11 @@
     }
   }
 }
+
+@media screen and (max-width: 375px) {
+  .login {
+    .login-container {
+      width: 60%;
+    }
+  }
+}

@@ -33,3 +33,11 @@
     }
   }
 }
+
+@media screen and (max-width: 375px) {
+  .pet-create {
+    .create-form {
+      width: 80%;
+    }
+  }
+}

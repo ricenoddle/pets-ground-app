@@ -2,8 +2,23 @@
   margin-top: 0.5rem;
 
   .pets-cards {
-    margin-left: 3rem;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .pets-list {
+    .pets-cards {
+      flex-direction: column;
+      margin-left: 0px;
+
+      .pet-card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
   }
 }

@@ -24,3 +24,17 @@
     }
   }
 }
+
+@media screen and (max-width: 376px) {
+  .home {
+    .rolling-pictures {
+      flex-direction: column;
+      .carousel {
+        width: 100%;
+      }
+      .introduction {
+        width: 100%;
+      }
+    }
+  }
+}

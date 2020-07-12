@@ -23,3 +23,20 @@
     }
   }
 }
+
+@media screen and (max-width: 375px) {
+  .pet-detail {
+    .card-container {
+      flex-direction: column;
+
+      .card {
+        width: 100%;
+      }
+
+      .pet-comments {
+        margin-top: 1rem;
+        width: 100%;
+      }
+    }
+  }
+}
