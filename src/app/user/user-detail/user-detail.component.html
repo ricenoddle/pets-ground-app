@@ -1,9 +1,4 @@
 <div class="user-detail">
-  <!-- {{ userInfo?.email }}
-  {{ userInfo?.displayName }}
-  {{ userInfo?.photoURL }}
-  {{ userInfo?.phoneNumber }}
-  <button (click)="updateInfo()">update</button> -->
   <div class="card">
     <div class="card-body">
       <div class="form-group row mt-3">
@@ -21,7 +16,8 @@
       </div>
       <div class="user-photo">
         <p>User Image:</p>
-        <img [src]="userInfo?.photoURL" alt="..." />
+        <img *ngIf="userInfo?.photoURL" [src]="userInfo?.photoURL" alt="..." />
+        <p *ngIf="!userInfo?.photoURL">Set your image</p>
       </div>
       <div class="form-group row mt-3">
         <label for="emailAddress" class="col-sm-5 col-form-label">
@@ -35,6 +31,14 @@
             [value]="userInfo?.email"
             disabled
           />
+          <button
+            *ngIf="!userInfo?.emailVerified"
+            mat-button
+            color="primary"
+            (click)="onVerifyEmail()"
+          >
+            Click to verify email
+          </button>
         </div>
       </div>
       <div class="form-group row">

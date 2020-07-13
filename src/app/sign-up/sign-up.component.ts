@@ -37,6 +37,7 @@ export class SignUpComponent implements OnInit {
       .signUpWithEmail(this.email.value, this.password.value)
       .then((res) => {
         this.hasSaved = true;
+        window.alert('You have successfully signed up');
         this.router.navigate(['/']);
       })
       .catch((err) => {

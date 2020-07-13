@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/shared/services/auth.service';
+import { User } from 'firebase/app';
 
 @Component({
   selector: 'app-header',
@@ -20,6 +21,8 @@ export class HeaderComponent implements OnInit {
   }
 
   getUserName() {
-    return this.authService.getCurrentUserInfo().displayName;
+    return this.authService.getCurrentUserInfo().displayName
+      ? this.authService.getCurrentUserInfo().displayName
+      : this.authService.getCurrentUserInfo().email;
   }
 }

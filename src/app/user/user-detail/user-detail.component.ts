@@ -34,4 +34,15 @@ export class UserDetailComponent implements OnInit {
       })
       .catch((err) => console.log(err));
   }
+
+  onVerifyEmail() {
+    this.userInfo
+      .sendEmailVerification()
+      .then((res) => {
+        window.alert('Verify email has been send, please check your email.');
+      })
+      .catch((err) => {
+        window.alert(err);
+      });
+  }
 }

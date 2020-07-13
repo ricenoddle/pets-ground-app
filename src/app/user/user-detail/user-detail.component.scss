@@ -5,6 +5,12 @@
   .card {
     width: 25rem;
 
+    .form-group {
+      .btn-verify {
+        font-size: 0.75rem;
+      }
+    }
+
     .user-photo {
       display: flex;
       height: 100px;
