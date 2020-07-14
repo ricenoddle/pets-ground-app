@@ -17,9 +17,11 @@ export class UserDetailComponent implements OnInit {
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
+    // console.log(this.userInfo)
     this.userInfo = this.userService.getCurrentUser();
     this.userName.setValue(this.userInfo?.displayName);
     this.phoneNumber.setValue(this.userInfo?.phoneNumber);
+    // console.log(this.userInfo);
   }
 
   onSave() {
